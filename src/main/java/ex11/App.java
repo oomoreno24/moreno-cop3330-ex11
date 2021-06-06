@@ -49,7 +49,7 @@ public class App {
         // calculations
         float usd = euros*rate;
 
-        // output
-        System.out.printf("%d euros at an exchange rate of %.4f is\n%.2f U.S. dollars.\n", (int)euros, rate, usd);
+        // output, rounding up to the next penny
+        System.out.printf("%d euros at an exchange rate of %.4f is\n%.2f U.S. dollars.\n", (int)euros, rate, usd+.005);
     }
 }
