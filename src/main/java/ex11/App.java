@@ -24,9 +24,11 @@ How many euros are you exchanging? 81
 What is the exchange rate? 1.3751
 81 euros at an exchange rate of 1.3751 is
 111.38 U.S. dollars.
+
 Constraints
 Ensure that fractions of a cent are rounded up to the next penny.
 Use a single output statement.
+
 Challenges
 Build a dictionary of conversion rates and prompt for the countries instead of the rates.
 Wire up your application to an external API that provides the current exchange rates.
@@ -34,6 +36,20 @@ Wire up your application to an external API that provides the current exchange r
 
 public class App {
     public static void main(String[] args) {
-        
+        Scanner in = new Scanner(System.in);
+        System.out.print("How many euros are you exchanging? ");
+        String numEuros = in.nextLine();
+        System.out.print("What is the exchange rate? ");
+        String exchangeRate = in.nextLine();
+
+        // converting strings to floats
+        float euros = Float.parseFloat(numEuros);
+        float rate = Float.parseFloat(exchangeRate);
+
+        // calculations
+        float usd = euros*rate;
+
+        // output
+        System.out.printf("%d euros at an exchange rate of %.4f is\n%.2f U.S. dollars.\n", (int)euros, rate, usd);
     }
 }
